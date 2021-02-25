@@ -118,18 +118,23 @@ tolerations: []
 # affinity contains the affinity settings for pod assignment.
 affinity: {}
 rootCA:
-  certs:
-    intermediate_ca.crt: |-
-      -----BEGIN CERTIFICATE-----
-      -----END CERTIFICATE-----
-    root_ca.crt: |-
-      -----BEGIN CERTIFICATE-----
-      -----END CERTIFICATE-----
+  generate: true
+  certs: 
+    existingSecret: ""
+    data: {}
+    #   intermediate_ca.crt: |-
+    #     -----BEGIN CERTIFICATE-----
+    #     -----END CERTIFICATE-----
+    #   root_ca.crt: |-
+    #     -----BEGIN CERTIFICATE-----
+    #     -----END CERTIFICATE-----
 
   key:
-    intermediate_ca_key: |-
-      -----BEGIN RSA PRIVATE KEY-----
-      -----END RSA PRIVATE KEY-----
+    existingSecret: ""
+    data: {}
+    #   intermediate_ca.key: |-
+    #     -----BEGIN RSA PRIVATE KEY-----
+    #     -----END RSA PRIVATE KEY-----
 
 
   

@@ -90,13 +90,21 @@ spec:
       volumes:
       - name: certs
         secret:
+        {{- if .Values.rootCA.certs.existingSecret }}
+          secretName: {{ .Values.rootCA.certs.existingSecret }}
+        {{ else }}
           secretName: {{ include "step-certificates.fullname" . }}-certs
+        {{- end }}
       - name: config
         secret:
           secretName: {{ include "step-certificates.fullname" . }}-config
       - name: secrets
         secret:
+        {{- if .Values.rootCA.key.existingSecret }}
+          secretName: {{ .Values.rootCA.key.existingSecret }}
+        {{ else }}
           secretName: {{ include "step-certificates.fullname" . }}-secrets
+        {{- end }}
       - name: ca-password
         secret:
           secretName: {{ include "step-certificates.fullname" . }}-ca-password
