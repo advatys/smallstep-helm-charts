@@ -6,7 +6,7 @@ rules:
 - apiGroups:
   - security.openshift.io
   resourceNames:
-  - {{ .Release.Name}}-uid1000
+  - anyuid
   resources:
   - securitycontextconstraints
   verbs:
