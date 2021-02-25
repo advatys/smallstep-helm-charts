@@ -11,7 +11,7 @@ metadata:
   labels:
     {{- include "step-certificates.labels" . | nindent 4 }}
 ---
-{{- if or (.Values.rootCA.generate) (not .Values.rootCA.certs.existingSecret }}
+{{- if or (.Values.rootCA.generate) (not .Values.rootCA.certs.existingSecret) }}
 apiVersion: v1
 kind: Secret
 metadata:
@@ -25,7 +25,7 @@ stringData:
 {{- end }}
 ---
 {{- end }}
-{{- if or (.Values.rootCA.generate) (not .Values.rootCA.key.existingSecret }}
+{{- if or (.Values.rootCA.generate) (not .Values.rootCA.key.existingSecret) }}
 apiVersion: v1
 kind: Secret
 metadata:
