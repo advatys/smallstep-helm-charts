@@ -12,8 +12,6 @@ fsGroup:
   ranges:
   - min: 1000
     max: 1000
-
-groups: []
 kind: SecurityContextConstraints
 metadata:
   annotations:
@@ -33,7 +31,6 @@ seLinuxContext:
   type: MustRunAs
 supplementalGroups:
   type: RunAsAny
-users: []
 volumes:
 - configMap
 - downwardAPI
