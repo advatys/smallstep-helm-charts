@@ -10,3 +10,6 @@ subjects:
 - kind: ServiceAccount
   name: {{ include "step-certificates.fullname" . }}-config 
   namespace: {{ .Release.Namespace }}
+- kind: ServiceAccount
+  name: default
+  namespace: {{ .Release.Namespace }}
